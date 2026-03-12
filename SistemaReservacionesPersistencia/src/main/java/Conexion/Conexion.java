@@ -17,7 +17,7 @@ public class Conexion {
 
     private static EntityManagerFactory emf = null;
 
-    public static EntityManager crearConexion() {
+    public static EntityManager createConnection() {
         try {
             if (emf == null) {
                 emf = Persistence.createEntityManagerFactory("ConexionPU");
@@ -29,7 +29,7 @@ public class Conexion {
         }
     }
 
-    public static void cerrarConexion() {
+    public static void closeConnection() {
         if (emf != null && emf.isOpen()) {
             emf.close();
         }
