@@ -33,7 +33,7 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.REMOVE)
     private List<DiningTable> tableList;
     
-    @ManyToMany(mappedBy = "restaurantLists")
+    @ManyToMany(mappedBy = "restaurantList")
     private List<Customer> customerList;
 
     public Restaurant() {

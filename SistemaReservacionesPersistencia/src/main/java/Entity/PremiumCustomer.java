@@ -4,6 +4,7 @@
  */
 package Entity;
 
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -12,13 +13,79 @@ import javax.persistence.*;
  */
 @Entity
 @Table()
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorValue("Premium")
 public class PremiumCustomer extends Customer {
-    
+
     @Column()
     private Long points;
-    
+
     @Column()
     private Long lvl;
+
+    public PremiumCustomer() {
+    }
+
+    private PremiumCustomer(PremiumBuilder builder) {
+        super(builder);
+        this.points = builder.points;
+        this.lvl = builder.lvl;
+    }
+
+    public Long getPoints() {
+        return points;
+    }
+
+    public Long getLvl() {
+        return lvl;
+    }
+
+    @Override
+    public Long getIdCustomer() {
+        return idCustomer;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getEmail() {
+        return email;
+    }
+
+    @Override
+    public List<Telephone> getTelephoneList() {
+        return telephoneList;
+    }
+
+    @Override
+    public List<Reservation> getReservationList() {
+        return reservationList;
+    }
+
+    public static class PremiumBuilder extends Builder<PremiumBuilder> {
+
+        private Long points;
+        private Long lvl;
+
+        @Override
+        protected PremiumBuilder self() {
+            return this;
+        }
+
+        public PremiumBuilder points(Long points) {
+            this.points = points;
+            return this;
+        }
+
+        public PremiumBuilder lvl(Long lvl) {
+            this.lvl = lvl;
+            return this;
+        }
+        
+        public PremiumCustomer build(){
+            return new PremiumCustomer(this);
+        }
+    }
 }

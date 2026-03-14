@@ -19,6 +19,7 @@ public class Reservation {
     private Long idReservation;
     
     @Column(nullable = false )
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dateHour;
     
     @ManyToOne()

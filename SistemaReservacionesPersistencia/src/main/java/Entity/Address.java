@@ -29,7 +29,7 @@ public class Address {
     private String city;
     
     @Column(nullable = false)
-    private long number;
+    private Long number;
     
     @OneToOne
     @JoinColumn(name = "idRestaurant")
