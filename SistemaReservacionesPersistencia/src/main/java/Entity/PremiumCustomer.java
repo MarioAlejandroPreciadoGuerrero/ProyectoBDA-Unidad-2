@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Table()
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorValue("Premium")
-public class PremimuCustomer extends Customer {
+public class PremiumCustomer extends Customer {
     
     @Column()
     private Long points;

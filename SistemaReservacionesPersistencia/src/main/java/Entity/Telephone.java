@@ -24,4 +24,31 @@ public class Telephone {
     @ManyToOne
     @JoinColumn(name = "idCustomer")
     private Customer customer;
+
+    public Telephone() {
+    }
+
+    public Long getIdTelephone() {
+        return idTelephone;
+    }
+
+    public void setIdTelephone(Long idTelephone) {
+        this.idTelephone = idTelephone;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 }

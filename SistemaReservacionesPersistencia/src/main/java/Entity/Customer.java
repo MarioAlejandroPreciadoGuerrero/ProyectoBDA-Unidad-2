@@ -25,9 +25,18 @@ public class Customer {
     protected String name;
     
     @Column(nullable = false)
-    protected String Email;
+    protected String email;
     
     @OneToMany(mappedBy = "customer",cascade = CascadeType.REMOVE)
-    @Column()
     protected List<Telephone> telephoneList;
+    
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE)
+    protected List<Reservation> reservationList;
+    
+    @ManyToMany()
+    @JoinTable(
+            joinColumns = @JoinColumn(name = "idCustomer"),
+            inverseJoinColumns = @JoinColumn(name = "idRestaurant")
+    )
+    private List<Restaurant> restaurantLists;
 }

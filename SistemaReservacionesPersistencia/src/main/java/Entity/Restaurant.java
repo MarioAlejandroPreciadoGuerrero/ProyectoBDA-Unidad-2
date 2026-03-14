@@ -4,6 +4,7 @@
  */
 package Entity;
 
+import java.util.List;
 import javax.persistence.*;
 /**
  *
@@ -17,15 +18,82 @@ public class Restaurant {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long idRestaurant;
     
-    @Column()
+    @Column(nullable = false)
     private String name;
     
-    @Column()
+    @Column(length = 10) 
     private String telephone;
     
-    @Column()
+    @Column(nullable = false)
     private Long kitchenType;
     
-    @OneToOne
+    @OneToOne(mappedBy = "restaurant",cascade = CascadeType.REMOVE)
     private Address address;
+    
+    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.REMOVE)
+    private List<DiningTable> tableList;
+    
+    @ManyToMany(mappedBy = "restaurantLists")
+    private List<Customer> customerList;
+
+    public Restaurant() {
+    }
+
+    public Long getIdRestaurant() {
+        return idRestaurant;
+    }
+
+    public void setIdRestaurant(Long idRestaurant) {
+        this.idRestaurant = idRestaurant;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public Long getKitchenType() {
+        return kitchenType;
+    }
+
+    public void setKitchenType(Long kitchenType) {
+        this.kitchenType = kitchenType;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public List<DiningTable> getTableList() {
+        return tableList;
+    }
+
+    public void setTableList(List<DiningTable> tableList) {
+        this.tableList = tableList;
+    }
+
+    public List<Customer> getCustomerList() {
+        return customerList;
+    }
+
+    public void setCustomerList(List<Customer> customerList) {
+        this.customerList = customerList;
+    }
+    
+    
 }
