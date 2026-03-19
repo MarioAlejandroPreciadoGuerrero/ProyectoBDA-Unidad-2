@@ -74,6 +74,30 @@ public class Customer {
     public List<Restaurant> getRestaurantList() {
         return restaurantList;
     }
+
+    public void setIdCustomer(Long idCustomer) {
+        this.idCustomer = idCustomer;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setTelephoneList(List<Telephone> telephoneList) {
+        this.telephoneList = telephoneList;
+    }
+
+    public void setReservationList(List<Reservation> reservationList) {
+        this.reservationList = reservationList;
+    }
+
+    public void setRestaurantList(List<Restaurant> restaurantList) {
+        this.restaurantList = restaurantList;
+    }
     
     
 

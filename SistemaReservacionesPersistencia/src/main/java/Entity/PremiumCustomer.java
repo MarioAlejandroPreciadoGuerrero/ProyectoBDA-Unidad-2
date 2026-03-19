@@ -64,6 +64,36 @@ public class PremiumCustomer extends Customer {
         return reservationList;
     }
 
+    public void setPoints(Long points) {
+        this.points = points;
+    }
+
+    public void setLvl(Long lvl) {
+        this.lvl = lvl;
+    }
+
+    public void setIdCustomer(Long idCustomer) {
+        this.idCustomer = idCustomer;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setTelephoneList(List<Telephone> telephoneList) {
+        this.telephoneList = telephoneList;
+    }
+
+    public void setReservationList(List<Reservation> reservationList) {
+        this.reservationList = reservationList;
+    }
+    
+    
+
     public static class PremiumBuilder extends Builder<PremiumBuilder> {
 
         private Long points;
