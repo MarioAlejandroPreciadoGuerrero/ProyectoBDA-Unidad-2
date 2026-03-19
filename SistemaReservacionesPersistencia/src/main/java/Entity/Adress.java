@@ -11,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table()
-public class Address {
+public class Adress {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long idAddress;
@@ -35,7 +35,7 @@ public class Address {
     @JoinColumn(name = "idRestaurant")
     private Restaurant restaurant;
 
-    public Address() {
+    public Adress() {
     }
 
     public Long getIdAddress() {

@@ -28,7 +28,7 @@ public class Restaurant {
     private Long kitchenType;
     
     @OneToOne(mappedBy = "restaurant",cascade = CascadeType.REMOVE)
-    private Address address;
+    private Adress address;
     
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.REMOVE)
     private List<DiningTable> tableList;
@@ -71,11 +71,11 @@ public class Restaurant {
         this.kitchenType = kitchenType;
     }
 
-    public Address getAddress() {
+    public Adress getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(Adress address) {
         this.address = address;
     }
 
